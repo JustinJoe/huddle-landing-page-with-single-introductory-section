@@ -8,6 +8,7 @@ html {
   /*Primary Colours*/
 
   --violet: hsl(257, 40%, 49%);
+  --dark-violet: hsl(257, 40%, 30%);
   --soft-magenta: hsl(300, 69%, 71%);
 
   --heading-font: "Poppins", sans-serif;
@@ -22,7 +23,6 @@ html {
   margin: 0;
   padding: 0;
   color: white;
-  text-align: center;
   line-height: 1.5;
 }
 
@@ -30,8 +30,7 @@ body {
   background-color: var(--violet);
   background-image: url("./images/bg-mobile.svg");
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: right top;
+  background-position: top right;
   font-family: var(--body-font);
   font-weight: 400;
 }
@@ -46,16 +45,23 @@ img {
   margin: 0 auto;
 }
 
-.container {
+.container,
+.flex {
   width: 90%;
+}
+
+.container {
   margin: 1em auto;
+}
+
+.flex {
+  margin: 0 auto 5em;
 }
 
 /* Header */
 header img {
-  max-width: 150px;
-  display: block;
-  margin: 0;
+  width: 150px;
+  margin: 2em 0 0;
 }
 
 /* Illustration */
@@ -64,6 +70,15 @@ header img {
 }
 
 /* Intro */
+.intro {
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
 .intro p {
   padding: 1em 0;
   margin-bottom: 1em;
@@ -75,9 +90,8 @@ header img {
   background-color: white;
   font-size: 0.85rem;
   font-family: var(--heading-font);
-  font-weight: 600;
-  padding: 1.25em 7.5em;
-  box-shadow: 5px 5px 5px 5px var(--violet);
+  padding: 1em 5em;
+  box-shadow: 3px 3px 2px 1px var(--dark-violet);
   border-radius: 2em;
 }
 
@@ -88,7 +102,7 @@ header img {
 
 /* Social Media Section */
 .social-media-links {
-  margin-top: 5em;
+  margin-bottom: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,8 +125,47 @@ ion-icon:hover {
 .attribution {
   font-size: 11px;
   text-align: center;
+  margin-bottom: 3em;
 }
 
 .attribution a:hover {
   color: var(--soft-magenta);
 }
+
+@media (min-width: 45em) {
+  .flex {
+    margin-top: 5em;
+    display: flex;
+    justify-content: center;
+    gap: 5em;
+  }
+
+  .illustration {
+    margin: 0;
+  }
+
+  .intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .intro a {
+    max-width: 30%;
+    text-align: center;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .social-media-links {
+    order: 2;
+  }
+
+  .attribution {
+    order: 1;
+  }
+} ;
